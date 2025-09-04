@@ -920,7 +920,7 @@ async def txt_handler(bot: Client, m: Message):
     
     await editable.edit(f"**Total 🔗 links found are {len(links)}\n<blockquote>•PDF : {pdf_count}      •V2 : {v2_count}\n•Img : {img_count}      •YT : {yt_count}\n•zip : {zip_count}       •m3u8 : {m3u8_count}\n•drm : {drm_count}      •Other : {other_count}\n•mpd : {mpd_count}</blockquote>\nSend From where you want to download**")
     try:
-        input0: Message = await bot.listen(editable.chat.id, timeout=20)
+        input0: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text = input0.text
         await input0.delete(True)
     except asyncio.TimeoutError:
@@ -934,7 +934,7 @@ async def txt_handler(bot: Client, m: Message):
         
     await editable.edit(f"**Enter Batch Name or send /d**")
     try:
-        input1: Message = await bot.listen(editable.chat.id, timeout=20)
+        input1: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text0 = input1.text
         await input1.delete(True)
     except asyncio.TimeoutError:
@@ -948,7 +948,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit("__**Enter resolution or Video Quality (`144`, `240`, `360`, `480`, `720`, `1080`)**__")
     try:
-        input2: Message = await bot.listen(editable.chat.id, timeout=20)
+        input2: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text2 = input2.text
         await input2.delete(True)
     except asyncio.TimeoutError:
@@ -974,7 +974,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit(f"**Enter the Credit Name or send /d\n\n<blockquote><b>Format:</b>\n🔹Send __Admin__ only for caption\n🔹Send __Admin,filename__ for caption and file...Separate them with a comma (,)</blockquote>**")
     try:
-        input3: Message = await bot.listen(editable.chat.id, timeout=20)
+        input3: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text3 = input3.text
         await input3.delete(True)
     except asyncio.TimeoutError:
@@ -989,7 +989,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit("<b>Enter 𝐏𝐖/𝐂𝐖/𝐂𝐏 Working Token For 𝐌𝐏𝐃 𝐔𝐑𝐋 or send /d</b>\n<blockquote>If you are downloading Classplus Videos, make sure you joined @bots_updatee this channel</blockquote>")
     try:
-        input4: Message = await bot.listen(editable.chat.id, timeout=20)
+        input4: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text4 = input4.text
         await input4.delete(True)
     except asyncio.TimeoutError:
@@ -1006,7 +1006,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit("**If you want to topic wise uploader : send `yes` or send /d**\n\n<blockquote><b>Topic fetch from (bracket) in title</b></blockquote>")
     try:
-        input5: Message = await bot.listen(editable.chat.id, timeout=20)
+        input5: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text5 = input5.text
         await input5.delete(True)
     except asyncio.TimeoutError:
@@ -1014,7 +1014,7 @@ async def txt_handler(bot: Client, m: Message):
         
     await editable.edit(f"**Send the Video Thumb URL or send /d**")
     try:
-        input6: Message = await bot.listen(editable.chat.id, timeout=20)
+        input6: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text6 = input6.text
         await input6.delete(True)
     except asyncio.TimeoutError:
@@ -1029,7 +1029,7 @@ async def txt_handler(bot: Client, m: Message):
 
     await editable.edit("__**⚠️Provide the Channel ID or send /d__\n\n<blockquote><i>🔹 Make me an admin to upload.\n🔸Send /id in your channel to get the Channel ID.\n\nExample: Channel ID = -100XXXXXXXXXXX</i></blockquote>\n**")
     try:
-        input7: Message = await bot.listen(editable.chat.id, timeout=20)
+        input7: Message = await bot.listen(editable.chat.id, timeout=200)
         raw_text7 = input7.text
         await input7.delete(True)
     except asyncio.TimeoutError:
@@ -1097,7 +1097,7 @@ async def txt_handler(bot: Client, m: Message):
 
             elif "classplusapp" in url:
                 signed_api = f"https://cpapi-ytas.onrender.com/extract_keys?url={url}@bots_updatee&user_id={user_id}"
-                response = requests.get(signed_api, timeout=20)
+                response = requests.get(signed_api, timeout=200)
                 url = response.text.strip()
                 url = response.json()['url']  
                     
